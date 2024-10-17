@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CardDetailsForm = () => {
   const [options, setOptions] = useState([]); // For customer options
@@ -45,9 +47,9 @@ const CardDetailsForm = () => {
     // Prepare data to be submitted
     const dataToSubmit = {
       Cust_id: selectedOption,
-      card_number: formData.cardNumber,
-      card_type: formData.cardType,
-      max_limit: formData.maxLimit,
+      Card_number: formData.cardNumber,
+      Card_type: formData.cardType,
+      Max_limit: formData.maxLimit,
     };
 
     try {
@@ -56,7 +58,7 @@ const CardDetailsForm = () => {
         dataToSubmit
       ); // Replace with your actual POST API endpoint
       console.log("Form submission success:", response.data);
-      alert("Account details submitted successfully!");
+      alert("Card details submitted successfully!");
     } catch (error) {
       console.error("Error while submitting form data:", error);
       alert("Failed to submit account details.");
